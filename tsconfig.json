@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "./build/",
+    "target": "es5",
+    "lib": ["esnext", "dom"],
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "declaration": true,
+  },
+  "exclude": ["node_modules", "**/*.spec.*"],
+  "include": ["src/**/*"]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "@inquirer/login-service",
+  "version": "0.10.0",
+  "description": "Login service and helpers for inquirer.com",
+  "private": true,
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "lint": "eslint --ext .ts src",
+    "lint:fix": "eslint --fix --ext .ts src",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:snapshot": "jest --update-snapshot",
+    "clean": "rm -rf build",
+    "prepublishOnly": "npm run lint && npm test && npm run build",
+    "publish:fury": "npm run prepublishOnly && npm pack | xargs -I % echo \"curl -F package=@% https://16p6c5-XNz212G3MXYkOzZJZlOMx35EBs@push.fury.io/inquirer/ && rm %\" | sh"
+  },
+  "author": "The Philadelphia Inquirer, LLC",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "@typescript-eslint/eslint-plugin": "^2.7.0",
+    "@typescript-eslint/parser": "^2.7.0",
+    "eslint": "^6.6.0",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "lodash": "^4.17.15"
+  }
+}
